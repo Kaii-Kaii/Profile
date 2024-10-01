@@ -1491,7 +1491,7 @@ header .logo a {
  */
 #about {
 	background: #FFFFFF;
-	padding-top: 12rem;
+	padding-top: 7rem;
 	padding-bottom: 15rem;
 }
 #about .section-intro {
@@ -1532,8 +1532,7 @@ header .logo a {
 	margin-left: 0;
 }
 .about-content .info-list li {
-	padding: 0 0 1.5rem 0;
-	margin-bottom: .6rem;
+	padding: 0 0 1rem 0;
 }
 .about-content .info-list li strong {
 	font-family: "poppins-bold", sans-serif;
