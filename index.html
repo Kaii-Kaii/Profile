@@ -1,99 +1,428 @@
 <!DOCTYPE html>
-<html class="no-js" lang="en"> 
+<html class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Hi, I'm Kai</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <link rel="icon" href="./images/avatar.webp" style="border-radius: 50%" />
+    <link rel="stylesheet" href="css/base.css" />
+    <link rel="stylesheet" href="css/main.css" />
+    <link rel="stylesheet" href="css/vendor.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+    <script src="js/modernizr.js"></script>
+    <script src="js/pace.min.js"></script>
+    <style>
+      body {
+        margin: 0;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        background: #f4f6f9;
+        color: #212529;
+        line-height: 1.6;
+      }
+      h1, h3, h4, h5 {
+        margin: 0;
+      }
+      a {
+        text-decoration: none;
+      }
+      .info-card {
+        background: #fff;
+        border-radius: 15px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        margin-bottom: 30px;
+        padding: 0;
+        transition: all 0.3s ease;
+        border: 1px solid #f0f0f0;
+      }
+      .info-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+      }
+      .card-header {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: white;
+        padding: 20px 25px;
+        border-radius: 15px 15px 0 0;
+        display: flex;
+        align-items: center;
+        gap: 15px;
+      }
+      .card-header i {
+        font-size: 24px;
+      }
+      .card-header h3 {
+        font-size: 18px;
+        font-weight: 600;
+      }
+      .card-content {
+        padding: 25px;
+      }
+      .info-item {
+        display: flex;
+        align-items: flex-start;
+        gap: 15px;
+        margin-bottom: 20px;
+        padding: 15px;
+        border-radius: 10px;
+        background: #f8f9fa;
+        transition: all 0.3s ease;
+      }
+      .info-item:hover {
+        background: #e9ecef;
+        transform: translateX(5px);
+      }
+      .info-icon {
+        width: 40px;
+        height: 40px;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        border-radius: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        font-size: 16px;
+        flex-shrink: 0;
+      }
+      .info-label {
+        font-weight: 600;
+        color: #495057;
+        font-size: 14px;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+      }
+      .info-value, .info-link {
+        font-size: 15px;
+        color: #212529;
+      }
+      .info-link {
+        color: #667eea;
+        font-weight: 500;
+        transition: all 0.3s ease;
+      }
+      .info-link:hover {
+        color: #764ba2;
+        text-decoration: underline;
+      }
+      .skill-category {
+        margin-bottom: 25px;
+      }
+      .skill-header {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        margin-bottom: 12px;
+        font-weight: 600;
+        color: #495057;
+        font-size: 14px;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+      }
+      .skill-tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin-bottom: 10px;
+      }
+      .skill-tag {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: white;
+        padding: 6px 12px;
+        border-radius: 20px;
+        font-size: 13px;
+        font-weight: 500;
+        letter-spacing: 0.3px;
+        transition: all 0.3s ease;
+        display: inline-block;
+        margin-bottom: 6px;
+      }
+      .skill-tag:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 5px 15px rgba(102, 126, 234, 0.3);
+      }
+      .project-item {
+        background: #f8f9fa;
+        border-radius: 12px;
+        padding: 20px;
+        margin-bottom: 20px;
+        transition: all 0.3s ease;
+        border-left: 4px solid #667eea;
+      }
+      .project-item:hover {
+        background: #e9ecef;
+        transform: translateX(5px);
+      }
+      .project-header {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        margin-bottom: 12px;
+        flex-wrap: wrap;
+      }
+      .project-header h4 {
+        font-size: 16px;
+        font-weight: 600;
+        flex: 1;
+        margin: 0;
+      }
+      .project-type {
+        background: #667eea;
+        color: white;
+        padding: 4px 8px;
+        border-radius: 12px;
+        font-size: 11px;
+        font-weight: 500;
+        text-transform: uppercase;
+      }
+      .project-tech {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 6px;
+        margin-bottom: 12px;
+      }
+      .tech-tag {
+        background: #dee2e6;
+        color: #495057;
+        padding: 4px 8px;
+        border-radius: 15px;
+        font-size: 11px;
+        font-weight: 500;
+      }
+      .project-description {
+        color: #6c757d;
+        font-size: 14px;
+        line-height: 1.5;
+        margin-bottom: 15px;
+      }
+      .project-link {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        color: #667eea;
+        font-weight: 500;
+        font-size: 14px;
+        transition: all 0.3s ease;
+      }
+      .project-link:hover {
+        color: #764ba2;
+      }
+      @media (max-width: 768px) {
+        .info-item {
+          flex-direction: column;
+          text-align: center;
+        }
+        .project-header {
+          flex-direction: column;
+          align-items: flex-start;
+        }
+      }
+    </style>
+  </head>
+  <body id="top">
+    <section id="intro" style="background-image: url('./images/image.png')">
+      <div class="intro-overlay"></div>
+      <div class="intro-content">
+        <div class="row">
+          <div class="col-twelve">
+            <h5>Hello World.</h5>
+            <h1>I'm Kai</h1>
+            <a class="button stroke smoothscroll" href="#about" title="">More About Me</a>
+          </div>
+        </div>
+      </div>
+    </section>
 
-<head>
+    <section id="about">
+      <div class="row section-intro">
+        <div class="col-twelve">
+          <h5>About</h5>
+          <div class="intro-info">
+            <img src="images/avatar.jpg" alt="Profile Picture" />
+            <p class="lead">
+              Xin chào, mình là Đặng Quốc Khang, sinh viên năm 3 ngành Công nghệ Thông tin tại Đại học Công Thương TP.HCM. Mình có nền tảng về phát triển ứng dụng web và mobile, từng tham gia các dự án sử dụng Flutter, ASP.NET, SQL Server, Firebase... Mình mong muốn áp dụng kiến thức đã học vào môi trường thực tế và tiếp tục phát triển kỹ năng lập trình.
+            </p>
+          </div>
+        </div>
+      </div>
 
-	<meta charset="utf-8">
-	<title>Hi, I'm Kai</title>
-	<meta name="description" content="">
-	<meta name="author" content="">
-	<link rel="icon" href="./images/avatar.webp" style="border-radius: 50%;">
-	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-	<link rel="stylesheet" href="css/base.css">
-	<link rel="stylesheet" href="css/main.css">
-	<link rel="stylesheet" href="css/vendor.css">
-	<script src="js/modernizr.js"></script>
-	<script src="js/pace.min.js"></script>
-</head>
-<body id="top">
-	<section id="intro" style="background-image: url('./images/image.png');">
-		<div class="intro-overlay"></div>
-		<div class="intro-content">
-			<div class="row">
-				<div class="col-twelve">
-					<h5>Hello World.</h5>
-					<h1>I'm Kai</h1>
-					<a class="button stroke smoothscroll" href="#about" title="">More About Me</a>
-				</div>
-			</div>
-		</div>
-	</section>
-	<section id="about">
+      <div class="row about-content">
+        <div class="col-six tab-full">
+          <div class="info-card">
+            <div class="card-header">
+              <i class="fas fa-user"></i>
+              <h3>Thông tin cá nhân</h3>
+            </div>
+            <div class="card-content">
+              <div class="info-item">
+                <div class="info-icon"><i class="fas fa-id-card"></i></div>
+                <div class="info-details">
+                  <span class="info-label">Họ và tên:</span>
+                  <span class="info-value">Đặng Quốc Khang</span>
+                </div>
+              </div>
+              <div class="info-item">
+                <div class="info-icon"><i class="fas fa-birthday-cake"></i></div>
+                <div class="info-details">
+                  <span class="info-label">Ngày sinh:</span>
+                  <span class="info-value">17/06/2004</span>
+                </div>
+              </div>
+              <div class="info-item">
+                <div class="info-icon"><i class="fas fa-globe"></i></div>
+                <div class="info-details">
+                  <span class="info-label">Website:</span>
+                  <a href="https://dangquockhang.id.vn/" target="_blank" class="info-link">dangquockhang.id.vn</a>
+                </div>
+              </div>
+              <div class="info-item">
+                <div class="info-icon"><i class="fas fa-envelope"></i></div>
+                <div class="info-details">
+                  <span class="info-label">Email:</span>
+                  <a href="mailto:dangquockhang2004@gmail.com" class="info-link">dangquockhang2004@gmail.com</a>
+                </div>
+              </div>
+              <div class="info-item">
+                <div class="info-icon"><i class="fas fa-phone"></i></div>
+                <div class="info-details">
+                  <span class="info-label">Điện thoại:</span>
+                  <span class="info-value">0342041706</span>
+                </div>
+              </div>
+              <div class="info-item">
+                <div class="info-icon"><i class="fas fa-map-marker-alt"></i></div>
+                <div class="info-details">
+                  <span class="info-label">Địa chỉ:</span>
+                  <span class="info-value">195 Phạm Văn Bạch, Phường 15, Tân Bình, Hồ Chí Minh</span>
+                </div>
+              </div>
+            </div>
+          </div>
 
-		<div class="row section-intro">
-			<div class="col-twelve">
+          <div class="info-card">
+            <div class="card-header">
+              <i class="fas fa-graduation-cap"></i>
+              <h3>Học tập</h3>
+            </div>
+            <div class="card-content">
+              <div class="info-item">
+                <div class="info-icon"><i class="fas fa-university"></i></div>
+                <div class="info-details">
+                  <span class="info-label">Trường:</span>
+                  <span class="info-value">Đại học Công Thương TP.HCM</span>
+                </div>
+              </div>
+              <div class="info-item">
+                <div class="info-icon"><i class="fas fa-laptop-code"></i></div>
+                <div class="info-details">
+                  <span class="info-label">Ngành:</span>
+                  <span class="info-value">Công nghệ thông tin</span>
+                </div>
+              </div>
+              <div class="info-item">
+                <div class="info-icon"><i class="fas fa-calendar-alt"></i></div>
+                <div class="info-details">
+                  <span class="info-label">Thời gian:</span>
+                  <span class="info-value">2022 - nay</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
 
-				<h5>About</h5>
-				<h1>Let me introduce myself.</h1>
+        <div class="col-six tab-full">
+          <div class="info-card">
+            <div class="card-header">
+              <i class="fas fa-code"></i>
+              <h3>Kỹ năng</h3>
+            </div>
+            <div class="card-content">
+              <div class="skill-category">
+                <div class="skill-header"><i class="fas fa-terminal"></i><span>Ngôn ngữ lập trình</span></div>
+                <div class="skill-tags">
+                  <span class="skill-tag">C#</span><span class="skill-tag">Dart</span><span class="skill-tag">Python</span><span class="skill-tag">JavaScript</span><span class="skill-tag">HTML/CSS</span>
+                </div>
+              </div>
+              <div class="skill-category">
+                <div class="skill-header"><i class="fas fa-layer-group"></i><span>Framework/Library</span></div>
+                <div class="skill-tags">
+                  <span class="skill-tag">Flutter</span><span class="skill-tag">ASP.NET Core</span><span class="skill-tag">ASP.NET MVC</span>
+                </div>
+              </div>
+              <div class="skill-category">
+                <div class="skill-header"><i class="fas fa-database"></i><span>Cơ sở dữ liệu</span></div>
+                <div class="skill-tags">
+                  <span class="skill-tag">SQL Server</span><span class="skill-tag">Cloud Firestore</span>
+                </div>
+              </div>
+              <div class="skill-category">
+                <div class="skill-header"><i class="fas fa-tools"></i><span>Công cụ & Công nghệ</span></div>
+                <div class="skill-tags">
+                  <span class="skill-tag">Git/GitHub</span><span class="skill-tag">Firebase</span><span class="skill-tag">Cloudinary</span><span class="skill-tag">Visual Studio</span><span class="skill-tag">Visual Studio Code</span><span class="skill-tag">Android Studio</span>
+                </div>
+              </div>
+            </div>
+          </div>
 
-				<div class="intro-info">
+          <div class="info-card">
+            <div class="card-header">
+              <i class="fas fa-project-diagram"></i>
+              <h3>Dự án nhóm</h3>
+            </div>
+            <div class="card-content">
+              <!-- Dự án nhóm -->
+              <div class="project-item">
+                <div class="project-header">
+                  <i class="fas fa-utensils"></i>
+                  <h4>Hệ thống quản lý nhà hàng</h4>
+                  <span class="project-type">Web App</span>
+                </div>
+                <div class="project-tech">
+                  <span class="tech-tag">ASP.NET</span><span class="tech-tag">C#</span><span class="tech-tag">SQL Server</span>
+                </div>
+                <p class="project-description">Thiết kế giao diện, xử lý nghiệp vụ quản trị nhà hàng sử dụng ASP.NET MVC. Thiết kế và truy vấn cơ sở dữ liệu bằng ADO.NET.</p>
+                <a href="https://github.com/Kaii-Kaii/QuanLyNhaHang" target="_blank" class="project-link"><i class="fab fa-github"></i> Xem Github</a>
+              </div>
+              <div class="project-item">
+                <div class="project-header">
+                  <i class="fas fa-mobile-alt"></i>
+                  <h4>Ứng dụng quản lý thu chi</h4>
+                  <span class="project-type">Mobile App</span>
+                </div>
+                <div class="project-tech">
+                  <span class="tech-tag">Flutter</span><span class="tech-tag">Dart</span><span class="tech-tag">ASP.NET Core API</span><span class="tech-tag">SQL Server</span>
+                </div>
+                <p class="project-description">Ứng dụng di động theo dõi thu chi, hỗ trợ chia nhóm, biểu đồ thống kê, tính thuế TNCN, chuyển đổi tiền tệ tích hợp API.</p>
+                <a href="https://github.com/Kaii-Kaii/QuanLyThuChi" target="_blank" class="project-link"><i class="fab fa-github"></i> Xem Frontend</a>
+                <a href="https://github.com/Kaii-Kaii/API" target="_blank" class="project-link"><i class="fab fa-github"></i> Xem API</a>
+              </div>
+            </div>
+          </div>
 
-					<img src="images/avatar.webp" alt="Profile Picture">
-
-					<p class="lead">
-						<br>
-						I am an information technology student
-					</p>
-				</div>
-
-			</div>
-		</div> <!-- /section-intro -->
-		<style>
-			li>h3,
-			li>p {
-				margin: 5px;
-			}
-		</style>
-		<div class="row about-content">
-
-			<div class="col-six tab-full">
-
-				<h3>Profile</h3>
-				<p>I am an information technology student, and live in Ho Chi Minh City</p>
-				<ul class="info-list">
-					<li>
-						<h3>Fullname:</h3>
-						<p>Đặng Quốc Khang</p>
-					</li>
-					<li>
-						<h3>Birth Date:</h3>
-						<p>June 17, 2004</p>
-					</li>
-					<li>
-						<h3>Website:</h3>
-						<p>https://dangquockhang.id.vn/</p>
-					</li>
-					<li>
-						<h3>Email:</h3>
-						<p>dangquockhang42@gmail.com</p>
-					</li>
-
-				</ul> <!-- /info-list -->
-
-			</div>
-
-			<div class="col-six tab-full">
-				<h3>Skills</h3>
-				<p>Currently, I am developing myself</p>
-				<br>
-			</div>
-
-	<!-- Java Script
-   ================================================== -->
-	<script src="js/jquery-2.1.3.min.js"></script>
-	<script src="js/plugins.js"></script>
-	<script src="js/main.js"></script>
-
-</body>
-
+          <div class="info-card">
+            <div class="card-header">
+              <i class="fas fa-user-astronaut"></i>
+              <h3>Dự án cá nhân</h3>
+            </div>
+            <div class="card-content">
+              <!-- Dự án cá nhân -->
+              <div class="project-item">
+                <div class="project-header">
+                  <i class="fas fa-bell"></i>
+                  <h4>Ứng dụng quản lý thanh toán định kỳ</h4>
+                  <span class="project-type">Mobile App</span>
+                </div>
+                <div class="project-tech">
+                  <span class="tech-tag">Flutter</span><span class="tech-tag">Dart</span><span class="tech-tag">Firebase</span><span class="tech-tag">Cloud Firestore</span><span class="tech-tag">Cloudinary</span>
+                </div>
+                <p class="project-description">Theo dõi, nhắc nhở các khoản thanh toán định kỳ (Netflix, Spotify...) tích hợp Firebase, Cloudinary, hỗ trợ đăng nhập Google.</p>
+                <a href="https://github.com/Kaii-Kaii/QuanLyThanhToan" target="_blank" class="project-link"><i class="fab fa-github"></i> Xem Github</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <script src="js/jquery-2.1.3.min.js"></script>
+    <script src="js/plugins.js"></script>
+    <script src="js/main.js"></script>
+  </body>
 </html>
